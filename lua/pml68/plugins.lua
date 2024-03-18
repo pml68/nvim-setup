@@ -1,14 +1,52 @@
 local plugins = {
   -- CMP
-  {
+	{
     "hrsh7th/nvim-cmp",
-    dependencies = {
+    event = "InsertEnter",
+		dependencies = {
+			{
+        "L3MON4D3/LuaSnip",
+        dependencies = "rafamadriz/friendly-snippets",
+      },
+      {
+        "windwp/nvim-autopairs",
+        opts = {
+          fast_wrap = {},
+          disable_filetype = { "TelescopePrompt", "vim" },
+        },
+        config = function(_, opts)
+          require("nvim-autopairs").setup(opts)
+
+          local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+          require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+        end,
+      },
       "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-    }
+    },
+    config = function()
+      require("pml68.configs.cmp")
+    end,
   },
+	-- Terminal
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {
+			shade_terminals = false,
+			persist_size = false,
+			size = function(term)
+    		if term.direction == "horizontal" then
+      		return 15
+    		elseif term.direction == "vertical" then
+      		return vim.o.columns * 0.4
+    		end
+  		end,
+		},
+		config = function(_, opts)
+			require("pml68.configs.toggleterm")
+			require("toggleterm").setup(opts)
+		end
+	},
   -- Undotree
   {
     "mbbill/undotree",
@@ -23,25 +61,25 @@ local plugins = {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPre",
     opts = {
-	signs = {
-    	  add = { text = "│" },
-    	  change = { text = "│" },
-    	  delete = { text = "󰍵" },
-    	  topdelete = { text = "‾" },
-    	  changedelete = { text = "~" },
-    	  untracked = { text = "│" },
+		signs = {
+    	add = { text = "│" },
+    	change = { text = "│" },
+    	delete = { text = "󰍵" },
+    	topdelete = { text = "‾" },
+    	changedelete = { text = "~" },
+    	untracked = { text = "│" },
   	},
-	on_attach = function(bufnr)
-	  local gs = package.loaded.gitsigns
+		on_attach = function(bufnr)
+	  	local gs = package.loaded.gitsigns
 
-	  local function map(mode, l, r, opts)
-	    opts = opts or {}
-	    opts.buffer = bufnr
-	    vim.keymap.set(mode, l, r, opts)
-          end
+	  	local function map(mode, l, r, opts)
+	    	opts = opts or {}
+	    	opts.buffer = bufnr
+	    	vim.keymap.set(mode, l, r, opts)
+    	end
 
-	  map("n", "<leader>gb", gs.blame_line)
-	end,
+	  	map("n", "<leader>gb", gs.blame_line)
+		end,
     },
     config = function(_, opts)
       require("gitsigns").setup(opts)
@@ -182,13 +220,16 @@ local plugins = {
       "mfussenegger/nvim-dap",
     },
     opts = {
-      handlers = {},      
+      handlers = {},
     },
   },
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = {
+			"mfussenegger/nvim-dap",
+			"nvim-neotest/nvim-nio"
+		},
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
