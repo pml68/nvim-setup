@@ -4,6 +4,12 @@ cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
   },
+	window = {
+    completion = {
+      border = "rounded",
+      winhighlight = "Normal:Normal",
+    }
+  },
 	preselect = 'item',
   completion = {
     completeopt = 'menu,menuone,noinsert'
