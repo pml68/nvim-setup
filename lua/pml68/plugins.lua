@@ -211,6 +211,9 @@ local plugins = {
   -- Dap
   {
     "mfussenegger/nvim-dap",
+		init = function()
+			require("pml68.configs.dap")
+		end
   },
   {
     "jay-babu/mason-nvim-dap.nvim",

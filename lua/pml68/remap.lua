@@ -6,14 +6,12 @@ vim.keymap.set("n", "<leader>cp", ":!xclip -sel clip -target image/png -i 2024*.
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
 
 -- keyboard problems (temporary)
-function starting()
+vim.keymap.set("n", "<leader>s", function()
   local pos = vim.api.nvim_win_get_cursor(0)[2]
   local line = vim.api.nvim_get_current_line()
   local nline = line:sub(0, pos) .. "<" .. line:sub(pos + 1)
   vim.api.nvim_set_current_line(nline)
-end
-
-vim.keymap.set("n", "<leader>s", "<cmd> lua starting() <CR>")
+end)
 
 -- switch between windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
