@@ -12,3 +12,5 @@ vim.opt.tabstop = 2
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.termguicolors = true
+
+vim.opt.whichwrap:append "<>[]hl"
