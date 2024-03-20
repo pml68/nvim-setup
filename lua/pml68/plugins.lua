@@ -22,6 +22,7 @@ local plugins = {
         end,
       },
       "hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path"
     },
     config = function()
       require("pml68.configs.cmp")
@@ -135,23 +136,23 @@ local plugins = {
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
-	  "c",
-	  "cpp",
-	  "lua",
-	  "kotlin",
-	  "nasm",
-	  "bash",
-	  "html",
-	  "scss",
-	  "css",
-	  "typescript",
-	  "javascript",
-	  "python",
-	  "rust",
-	  "markdown",
-	  "json",
-	  "glsl",
-	  "dart",
+					"c",
+					"cpp",
+					"lua",
+					"kotlin",
+					"nasm",
+					"bash",
+					"html",
+					"scss",
+					"css",
+					"typescript",
+					"javascript",
+					"python",
+					"rust",
+					"markdown",
+					"json",
+					"glsl",
+					"dart",
         }
       })
     end
@@ -283,6 +284,20 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end,
   },
+	{
+		"saecki/crates.nvim",
+		tag = "stable",
+		dependencies = "hrsh7th/nvim-cmp",
+		event = {"BufRead Cargo.toml"},
+		config = function()
+			local crates = require("crates")
+			crates.setup()
+
+			vim.keymap.set("n", "<leader>rcu", function()
+				crates.upgrade_all_crates()
+			end)
+		end
+	},
 }
 
 return plugins
