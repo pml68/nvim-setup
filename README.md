@@ -13,7 +13,7 @@ cd ~/.config/silicon/
 silicon --build-cache
 ```
 
-If you get an error related to syntaxes, create the missing folder (you don't need to put anything in it)
+If you get an error related to syntaxes, create the missing directory (you don't need to put anything in it)
 
 ```sh
 mkdir -p ~/.config/silicon/syntaxes/
