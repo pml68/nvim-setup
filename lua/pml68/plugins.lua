@@ -153,7 +153,10 @@ local plugins = {
 					"json",
 					"glsl",
 					"dart",
-        }
+				},
+				highlight = {
+					enable = true
+				}
       })
     end
   },
