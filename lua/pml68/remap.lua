@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>gB", "<cmd> Git blame <CR>")
-vim.keymap.set("v", "<leader>cs", "<cmd> Silicon <CR>")
+vim.keymap.set("v", "<leader>cs", ":Silicon<CR>")
 vim.keymap.set("n", "<leader>cp", ":!xclip -sel clip -target image/png -i 2024*.png && rm 2024*.png <CR>")
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
 vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>")

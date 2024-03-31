@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>g", "<cmd> lua _lazygit_toggle() <CR>", {noremap = 
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+  vim.keymap.set('t', '<C-x>', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
   vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
   vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
