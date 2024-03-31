@@ -1,4 +1,12 @@
 local plugins = {
+	-- Indent Blankline
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		config = function()
+			require("ibl").setup()
+		end
+	},
   -- CMP
 	{
     "hrsh7th/nvim-cmp",
