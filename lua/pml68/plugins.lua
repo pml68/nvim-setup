@@ -167,6 +167,7 @@ local plugins = {
 					"css",
 					"typescript",
 					"javascript",
+					"svelte",
 					"python",
 					"rust",
 					"markdown",
