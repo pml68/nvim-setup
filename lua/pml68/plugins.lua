@@ -1,4 +1,16 @@
 local plugins = {
+	-- Colorizer
+	{
+		"NvChad/nvim-colorizer.lua",
+		event = "BufReadPost",
+		config = function()
+			require("colorizer").setup()
+
+			vim.defer_fn(function()
+				require("colorizer").attach_to_buffer(0)
+			end, 0)
+		end
+	},
 	-- Indent Blankline
 	{
 		"lukas-reineke/indent-blankline.nvim",
