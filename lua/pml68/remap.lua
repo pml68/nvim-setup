@@ -7,14 +7,6 @@ vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
 vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>")
 vim.keymap.set("n", "<leader>rn", "<cmd> set rnu! <CR>")
 
--- keyboard problems (temporary)
-vim.keymap.set("n", "<leader>s", function()
-  local pos = vim.api.nvim_win_get_cursor(0)[2]
-  local line = vim.api.nvim_get_current_line()
-  local nline = line:sub(0, pos) .. "<" .. line:sub(pos + 1)
-  vim.api.nvim_set_current_line(nline)
-end)
-
 -- switch between windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
