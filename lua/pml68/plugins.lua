@@ -25,9 +25,9 @@ local plugins = {
     event = "InsertEnter",
 		dependencies = {
 			{
-        "L3MON4D3/LuaSnip",
-        dependencies = "rafamadriz/friendly-snippets",
-      },
+				"L3MON4D3/LuaSnip",
+				dependencies = "rafamadriz/friendly-snippets"
+			},
       {
         "windwp/nvim-autopairs",
         opts = {
@@ -320,6 +320,14 @@ local plugins = {
 			vim.keymap.set("n", "<leader>rcu", function()
 				crates.upgrade_all_crates()
 			end)
+		end
+	},
+	{
+		"lervag/vimtex",
+		lazy = false,
+		dependencies = "micangl/cmp-vimtex",
+		init = function()
+			vim.g.vimtex_view_method = 'mupdf'
 		end
 	},
 }
