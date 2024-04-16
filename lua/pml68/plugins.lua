@@ -143,11 +143,17 @@ local plugins = {
   },
   -- Color scheme
   {
-    "drewtempelmeyer/palenight.vim",
-    config = function()
-      vim.cmd("colorscheme palenight")
-    end
-  },
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function ()
+			require("rose-pine").setup({
+				styles = {
+					transparency = true
+				}
+			})
+			vim.cmd("colorscheme rose-pine")
+		end
+	},
   -- Syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
@@ -322,6 +328,7 @@ local plugins = {
 			end)
 		end
 	},
+	-- LaTeX
 	{
 		"lervag/vimtex",
 		lazy = false,
