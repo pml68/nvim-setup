@@ -1,7 +1,7 @@
 local plugins = {
 	-- Colorizer
 	{
-		"NvChad/nvim-colorizer.lua",
+			"NvChad/nvim-colorizer.lua",
 		event = "BufReadPost",
 		config = function()
 			require("colorizer").setup()
