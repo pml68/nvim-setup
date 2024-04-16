@@ -4,18 +4,10 @@ My custom Neovim setup
 
 # Installation
 
-After copying the repo contents to your Neovim config directory, install Silicon and add the Palenight theme
+Download in your config directory
 
 ```sh
-mkdir -p ~/.config/silicon/themes/
-cp Palenight.tmTheme ~/.config/silicon/themes/
-cd ~/.config/silicon/
-silicon --build-cache
+git clone https://github.com/pml68/nvim-setup ~/.config/nvim
 ```
 
-If you get an error related to syntaxes, create the missing directory (you don't need to put anything in it)
-
-```sh
-mkdir -p ~/.config/silicon/syntaxes/
-silicon --build-cache
-```
+After starting Neovim, and letting Lazy and nvim-treesitter install everything, run the `:MasonInstallAll` command to install the required LSPs and formatters
