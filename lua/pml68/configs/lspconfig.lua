@@ -15,7 +15,7 @@ local servers = {
   "dartls",
   "kotlin_language_server",
   "lua_ls",
-	"elixirls",
+  "elixirls",
   "glsl_analyzer"
 }
 

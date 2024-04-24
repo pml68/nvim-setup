@@ -3,23 +3,23 @@ local cmp = require("cmp")
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
-		{name = 'path'},
-		{name = 'vimtex'},
-		{name = 'crates'},
+    {name = 'path'},
+    {name = 'vimtex'},
+    {name = 'crates'},
   },
-	window = {
+  window = {
     completion = {
       border = "rounded",
       winhighlight = "Normal:Normal",
     }
   },
-	preselect = 'item',
+  preselect = 'item',
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
   mapping = cmp.mapping.preset.insert({
     ['<CR>'] = cmp.mapping.confirm({select = true}),
-		['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
     ['<Tab>'] = cmp.mapping.select_next_item({behavior = 'select'}),
   }),
   snippet = {
