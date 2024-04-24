@@ -10,6 +10,9 @@ vim.keymap.set("n", "<leader>fo", "=ap")
 vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>")
 vim.keymap.set("n", "<leader>vl", "<cmd>VimtexView<CR>")
 
+-- Screenkey
+vim.keymap.set("n", "<leader>sk", "<cmd>Screenkey<CR>")
+
 -- switch between windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")

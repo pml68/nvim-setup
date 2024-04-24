@@ -201,6 +201,12 @@ local plugins = {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
   },
+  {
+    "NStefan002/screenkey.nvim",
+    cmd = "Screenkey",
+    version = "*",
+    config = true
+  },
   --Formatting
   {
     "nvimdev/guard.nvim",
