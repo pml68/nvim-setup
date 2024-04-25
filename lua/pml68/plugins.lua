@@ -291,6 +291,18 @@ local plugins = {
       vim.cmd("TSInstall! pkl")
     end
   },
+  -- Helium
+  {
+    "pml68/helium-neovim",
+    lazy = true,
+    event = "BufReadPre *.hsm",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter"
+    },
+    build = function()
+      vim.cmd("TSInstall! helium")
+    end
+  },
   --JSON
   {
     "b0o/schemastore.nvim",
