@@ -11,6 +11,8 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
+vim.opt.swapfile = false
+
 vim.opt.scrolloff = 10
 
 vim.opt.hlsearch = true
