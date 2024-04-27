@@ -3,7 +3,6 @@ return {
     "bash-language-server",
     "lua-language-server",
     "clangd",
-    "codelldb",
     "clang-format",
     "jq",
     "json-lsp",
