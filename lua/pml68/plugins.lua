@@ -181,6 +181,9 @@ local plugins = {
           "json",
           "glsl",
           "dart",
+          "gitignore",
+          "gitattributes",
+          "gitcommit",
         },
         highlight = {
           enable = true
