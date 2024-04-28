@@ -34,7 +34,7 @@ vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
-    local opts = {buffer = event.buf}
+    local opts = { buffer = event.buf }
 
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -44,8 +44,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
   end
 })
 
@@ -55,7 +55,7 @@ vim.api.nvim_create_autocmd('filetype', {
   desc = 'Better mappings for netrw',
   callback = function()
     local bind = function(lhs, rhs)
-      vim.keymap.set('n', lhs, rhs, {remap = true, buffer = true})
+      vim.keymap.set('n', lhs, rhs, { remap = true, buffer = true })
     end
 
     bind('a', '%')

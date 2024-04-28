@@ -8,7 +8,7 @@ local plugins = {
 
       vim.defer_fn(function()
         require("colorizer").attach_to_buffer(0)
-      end,0)
+      end, 0)
     end
   },
   --IndentBlankline
@@ -32,13 +32,13 @@ local plugins = {
         "windwp/nvim-autopairs",
         opts = {
           fast_wrap = {},
-          disable_filetype = {"TelescopePrompt","vim"},
+          disable_filetype = { "TelescopePrompt", "vim" },
         },
-        config = function(_,opts)
+        config = function(_, opts)
           require("nvim-autopairs").setup(opts)
 
-          local cmp_autopairs = require"nvim-autopairs.completion.cmp"
-          require("cmp").event:on("confirm_done",cmp_autopairs.on_confirm_done())
+          local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+          require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end,
       },
       "hrsh7th/cmp-nvim-lsp",
@@ -63,7 +63,7 @@ local plugins = {
         end
       end,
     },
-    config = function(_,opts)
+    config = function(_, opts)
       require("pml68.configs.toggleterm")
       require("toggleterm").setup(opts)
     end
@@ -83,26 +83,26 @@ local plugins = {
     event = "BufReadPre",
     opts = {
       signs = {
-        add = {text = "│"},
-        change = {text = "│"},
-        delete = {text = "󰍵"},
-        topdelete = {text = "‾"},
-        changedelete = {text = "~"},
-        untracked = {text = "│"},
+        add = { text = "│" },
+        change = { text = "│" },
+        delete = { text = "󰍵" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
+        untracked = { text = "│" },
       },
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
-        local function map(mode,l,r,opts)
+        local function map(mode, l, r, opts)
           opts = opts or {}
           opts.buffer = bufnr
-          vim.keymap.set(mode,l,r,opts)
+          vim.keymap.set(mode, l, r, opts)
         end
 
-        map("n","<leader>gb",gs.blame_line)
+        map("n", "<leader>gb", gs.blame_line)
       end,
     },
-    config = function(_,opts)
+    config = function(_, opts)
       require("gitsigns").setup(opts)
     end
   },
@@ -115,17 +115,17 @@ local plugins = {
   },
   {
     "williamboman/mason.nvim",
-    cmd = {"Mason","MasonInstall","MasonInstallAll","MasonUpdate"},
+    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
     opts = function()
       return require("pml68.configs.mason")
     end,
-    config = function(_,opts)
+    config = function(_, opts)
       require("mason").setup(opts)
-      vim.api.nvim_create_user_command("MasonInstallAll",function()
+      vim.api.nvim_create_user_command("MasonInstallAll", function()
         if opts.ensure_installed and #opts.ensure_installed > 0 then
-          vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed," "))
+          vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
         end
-      end,{})
+      end, {})
 
       vim.g.mason_binaries_list = opts.ensure_installed
     end,
@@ -158,7 +158,7 @@ local plugins = {
   --Syntaxhighlighting
   {
     "nvim-treesitter/nvim-treesitter",
-    event = {"BufReadPost","BufNewFile"},
+    event = { "BufReadPost", "BufNewFile" },
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
@@ -282,12 +282,12 @@ local plugins = {
     "saecki/crates.nvim",
     tag = "stable",
     dependencies = "hrsh7th/nvim-cmp",
-    event = {"BufRead Cargo.toml"},
+    event = { "BufRead Cargo.toml" },
     config = function()
       local crates = require("crates")
       crates.setup()
 
-      vim.keymap.set("n","<leader>rcu",function()
+      vim.keymap.set("n", "<leader>rcu", function()
         crates.upgrade_all_crates()
       end)
     end

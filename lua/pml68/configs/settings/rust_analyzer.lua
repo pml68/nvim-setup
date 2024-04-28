@@ -1,5 +1,5 @@
 return {
-  filetypes = {"rust"},
+  filetypes = { "rust" },
   settings = {
     ['rust-analyzer'] = {
       cargo = {
