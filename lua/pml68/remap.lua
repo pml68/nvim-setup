@@ -13,6 +13,9 @@ vim.keymap.set("n", "<leader>vl", "<cmd>VimtexView<CR>")
 -- Screenkey
 vim.keymap.set("n", "<leader>sk", "<cmd>Screenkey<CR>")
 
+-- highlights
+vim.keymap.set("n", "<Esc>", "<cmd>nohl<CR>")
+
 -- switch between windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
