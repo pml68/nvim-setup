@@ -3,14 +3,16 @@ local cmp = require("cmp")
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'path' },
+    { name = 'buffer' },
     { name = 'vimtex' },
     { name = 'crates' },
+    { name = 'path' },
   },
   window = {
     completion = {
       border = "rounded",
       winhighlight = "Normal:Normal",
+      scrollbar = false,
     }
   },
   preselect = 'item',
