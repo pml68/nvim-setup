@@ -15,6 +15,7 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
+    event = "User FilePost",
     config = function()
       require("ibl").setup()
     end
@@ -53,6 +54,7 @@ local plugins = {
   {
     "akinsho/toggleterm.nvim",
     version = "*",
+    cmd = "ToggleTerm",
     opts = {
       shade_terminals = false,
       persist_size = false,
@@ -110,6 +112,7 @@ local plugins = {
   --LSP
   {
     "neovim/nvim-lspconfig",
+    event = "BufReadPre",
     config = function()
       require("pml68.configs.lspconfig")
     end
@@ -136,6 +139,7 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
+    event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim"
     },
@@ -147,6 +151,7 @@ local plugins = {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+    priority = 1000,
     config = function()
       require("rose-pine").setup({
         styles = {
@@ -195,7 +200,7 @@ local plugins = {
   --Misc
   {
     "andweeb/presence.nvim",
-    lazy = false,
+    event = "BufReadPost",
     opts = {
       main_image = "file",
       log_level = "debug",
@@ -245,7 +250,6 @@ local plugins = {
   --PKL
   {
     "https://github.com/apple/pkl-neovim",
-    lazy = true,
     event = "BufReadPre *.pkl",
     dependencies = {
       "nvim-treesitter/nvim-treesitter"
@@ -257,7 +261,6 @@ local plugins = {
   -- Helium
   {
     "pml68/helium-neovim",
-    lazy = true,
     event = "BufReadPre *.hsm",
     dependencies = {
       "nvim-treesitter/nvim-treesitter"
@@ -296,7 +299,7 @@ local plugins = {
   --LaTeX
   {
     "lervag/vimtex",
-    lazy = false,
+    lazy = true,
     dependencies = "micangl/cmp-vimtex",
     init = function()
       vim.g.vimtex_view_method = 'mupdf'
