@@ -15,7 +15,7 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    event = "User FilePost",
+    event = "BufReadPost",
     config = function()
       require("ibl").setup()
     end
@@ -83,7 +83,7 @@ local plugins = {
   },
   {
     "lewis6991/gitsigns.nvim",
-    event = "BufReadPre",
+    event = "BufReadPost",
     opts = {
       signs = {
         add = { text = "│" },
@@ -112,7 +112,7 @@ local plugins = {
   --LSP
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPre",
+    event = "BufReadPost",
     config = function()
       require("pml68.configs.lspconfig")
     end
