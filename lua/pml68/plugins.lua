@@ -139,13 +139,10 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
-    event = "VeryLazy",
+    cmd = "Telescope",
     dependencies = {
       "nvim-lua/plenary.nvim"
     },
-    config = function()
-      require("pml68.configs.telescope")
-    end
   },
   --Colorscheme
   {
