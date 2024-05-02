@@ -1,17 +1,17 @@
 local cmp = require("cmp")
 
 cmp.setup({
-  sources = {
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'vimtex' },
-    { name = 'crates' },
     { name = 'path' },
-  },
+    { name = 'vimtex' },
+    { name = 'crates' }
+  }, {
+    { name = 'buffer' },
+  }),
   window = {
     completion = {
       border = "rounded",
-      winhighlight = "Normal:Normal",
       scrollbar = false,
     }
   },
