@@ -2,6 +2,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 
 local servers = {
+  "asm_lsp",
   "html",
   "tsserver",
   "cssls",

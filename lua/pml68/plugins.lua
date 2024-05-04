@@ -166,11 +166,11 @@ local plugins = {
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
+          "asm",
           "c",
           "cpp",
           "lua",
           "kotlin",
-          "nasm",
           "bash",
           "html",
           "scss",
@@ -184,6 +184,7 @@ local plugins = {
           "json",
           "glsl",
           "dart",
+          "make",
           "gitignore",
           "gitattributes",
           "gitcommit",
