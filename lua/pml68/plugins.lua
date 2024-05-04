@@ -130,8 +130,6 @@ local plugins = {
           vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
         end
       end, {})
-
-      vim.g.mason_binaries_list = opts.ensure_installed
     end,
     build = ":MasonInstallAll",
   },
@@ -149,10 +147,12 @@ local plugins = {
     "rose-pine/neovim",
     name = "rose-pine",
     priority = 1000,
+    lazy = false,
     config = function()
       require("rose-pine").setup({
         styles = {
-          transparency = true
+          transparency = true,
+          italic = false,
         }
       })
       vim.cmd("colorscheme rose-pine")
@@ -296,7 +296,6 @@ local plugins = {
   --LaTeX
   {
     "lervag/vimtex",
-    lazy = true,
     dependencies = "micangl/cmp-vimtex",
     init = function()
       vim.g.vimtex_view_method = 'mupdf'

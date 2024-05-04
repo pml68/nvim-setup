@@ -13,4 +13,22 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = require("pml68.plugins")
 
-require("lazy").setup(plugins)
+require("lazy").setup(plugins, {
+  defaults = { lazy = true },
+  performance = {
+    cache = {
+      enabled = true,
+    },
+    rtp = {
+      disabled_plugins = {
+        "matchit",
+        "matchparen",
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+})
