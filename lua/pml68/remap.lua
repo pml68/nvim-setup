@@ -5,6 +5,8 @@ vim.keymap.set("n", "<leader>rn", "<cmd>set rnu!<CR>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohl<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>")
 vim.keymap.set("n", "<leader>fo", "=ap")
+vim.keymap.set("n", "<leader>b", "<cmd>!chmod 755 %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>w", ":w<CR>:so<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
