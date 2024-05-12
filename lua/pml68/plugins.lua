@@ -298,7 +298,7 @@ local plugins = {
   {
     "lervag/vimtex",
     dependencies = "micangl/cmp-vimtex",
-    lazy = false,
+    ft = "tex",
     init = function()
       vim.g.vimtex_view_method = 'mupdf'
     end
