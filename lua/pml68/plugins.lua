@@ -181,6 +181,7 @@ local plugins = {
           "python",
           "rust",
           "markdown",
+          "yaml",
           "json",
           "glsl",
           "dart",
