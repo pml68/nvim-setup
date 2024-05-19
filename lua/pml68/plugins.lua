@@ -1,14 +1,10 @@
 local plugins = {
   --Colorizer
   {
-    "NvChad/nvim-colorizer.lua",
+    "brenoprata10/nvim-highlight-colors",
     event = "BufReadPost",
-    config = function()
-      require("colorizer").setup()
-
-      vim.defer_fn(function()
-        require("colorizer").attach_to_buffer(0)
-      end, 0)
+    config = function ()
+      require("nvim-highlight-colors").setup()
     end
   },
   --IndentBlankline
