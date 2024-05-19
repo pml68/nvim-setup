@@ -4,7 +4,9 @@ local plugins = {
     "brenoprata10/nvim-highlight-colors",
     event = "BufReadPost",
     config = function ()
-      require("nvim-highlight-colors").setup()
+      require("nvim-highlight-colors").setup({
+        render = 'virtual'
+      })
     end
   },
   --IndentBlankline
