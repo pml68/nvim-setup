@@ -19,8 +19,6 @@ vim.o.incsearch = true
 
 vim.o.clipboard = "unnamedplus"
 
-vim.o.termguicolors = true
-
 vim.opt.whichwrap:append "<>[]hl"
 
 vim.g.netrw_browse_split = 0
