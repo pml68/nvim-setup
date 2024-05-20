@@ -63,12 +63,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gc', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     -- u/Blan_11
     vim.keymap.set('n', '<leader>lh', function()
-      local ok = pcall(vim.lsp.inlay_hint.enable, vim.lsp.inlay_hint.is_enabled())
-      if ok then
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-      else
-        vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
-      end
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, { silent = true })
   end
 })
