@@ -13,10 +13,8 @@ local servers = {
   "emmet_ls",
   "jsonls",
   "rust_analyzer",
-  "dartls",
   "kotlin_language_server",
   "lua_ls",
-  "elixirls",
   "glsl_analyzer"
 }
 

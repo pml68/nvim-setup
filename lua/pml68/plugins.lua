@@ -182,7 +182,6 @@ local plugins = {
           "yaml",
           "json",
           "glsl",
-          "dart",
           "make",
           "gitignore",
           "gitattributes",
@@ -234,15 +233,6 @@ local plugins = {
         lsp_as_default_formatter = false
       })
     end
-  },
-  --Dart/Flutter
-  {
-    "akinsho/flutter-tools.nvim",
-    ft = "dart",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim",
-    },
   },
   --PKL
   {

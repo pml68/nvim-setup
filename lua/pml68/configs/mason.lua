@@ -15,7 +15,6 @@ return {
     "pyright",
     "rust-analyzer",
     "glsl_analyzer",
-    "elixir-ls",
     "kotlin-language-server"
   },
   PATH = "skip",
