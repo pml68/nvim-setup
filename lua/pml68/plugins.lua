@@ -3,7 +3,7 @@ local plugins = {
   {
     "brenoprata10/nvim-highlight-colors",
     event = "BufReadPost",
-    config = function ()
+    config = function()
       require("nvim-highlight-colors").setup({
         render = 'virtual'
       })
@@ -65,16 +65,7 @@ local plugins = {
       require("toggleterm").setup(opts)
     end
   },
-  --Undotree
-  {
-    "mbbill/undotree",
-    cmd = "UndotreeToggle",
-  },
   --Git
-  {
-    "tpope/vim-fugitive",
-    event = "BufReadPre"
-  },
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPost",
@@ -90,13 +81,7 @@ local plugins = {
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
-        local function map(mode, l, r, opts)
-          opts = opts or {}
-          opts.buffer = bufnr
-          vim.keymap.set(mode, l, r, opts)
-        end
-
-        map("n", "<leader>gb", gs.blame_line)
+        vim.keymap.set("n", "<leader>gb", gs.blame_line, { buffer = bufnr })
       end,
     },
     config = function(_, opts)

@@ -20,12 +20,6 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>")
 vim.keymap.set("n", "<leader>vl", "<cmd>VimtexView<CR>")
 
--- Undotree
-vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
-
--- Gitsigns
-vim.keymap.set("n", "<leader>gB", "<cmd>Git blame<CR>")
-
 -- Screenkey
 vim.keymap.set("n", "<leader>sk", "<cmd>Screenkey<CR>")
 
