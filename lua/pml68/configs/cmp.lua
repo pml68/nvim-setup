@@ -24,9 +24,4 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
     ['<Tab>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
   }),
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
 })

@@ -24,10 +24,6 @@ local plugins = {
     event = "InsertEnter",
     dependencies = {
       {
-        "L3MON4D3/LuaSnip",
-        dependencies = "rafamadriz/friendly-snippets"
-      },
-      {
         "windwp/nvim-autopairs",
         opts = {
           fast_wrap = {},
