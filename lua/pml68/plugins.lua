@@ -3,10 +3,8 @@ local plugins = {
   {
     "stevearc/oil.nvim",
     cmd = "Oil",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("oil").setup({
-        columns = { "icon" },
         keymaps = {
           ["<C-h>"] = false,
         },
