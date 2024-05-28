@@ -1,5 +1,22 @@
 local plugins = {
-  --Colorizer
+  -- Oil.nvim
+  {
+    "stevearc/oil.nvim",
+    cmd = "Oil",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("oil").setup({
+        columns = { "icon" },
+        keymaps = {
+          ["<C-h>"] = false,
+        },
+        view_options = {
+          show_hidden = true,
+        },
+      })
+    end
+  },
+  --Color highlighting
   {
     "brenoprata10/nvim-highlight-colors",
     event = "BufReadPost",
@@ -217,7 +234,7 @@ local plugins = {
   },
   --PKL
   {
-    "https://github.com/apple/pkl-neovim",
+    "apple/pkl-neovim",
     event = "BufReadPre *.pkl",
     dependencies = {
       "nvim-treesitter/nvim-treesitter"

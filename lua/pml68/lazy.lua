@@ -29,6 +29,7 @@ require("lazy").setup(plugins, {
         "tutor",
         "zipPlugin",
         "osc52",
+        "netrwPlugin",
       },
     },
   },
