@@ -1,12 +1,14 @@
 vim.o.rnu = true
 vim.o.nu = true
 
+vim.o.conceallevel = 2
+
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.expandtab = true
 
-vim.o.mouse = ""
+vim.o.mouse = "a"
 
 vim.o.smartindent = true
 
