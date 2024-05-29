@@ -13,6 +13,7 @@ vim.o.smartindent = true
 vim.o.swapfile = false
 
 vim.o.scrolloff = 10
+vim.o.cursorline = false
 
 vim.o.hlsearch = true
 vim.o.incsearch = true
