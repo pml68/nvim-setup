@@ -6,7 +6,6 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohl<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>")
 vim.keymap.set("n", "<leader>fo", "=ap")
 vim.keymap.set("n", "<leader>b", "<cmd>!chmod 755 %<CR>", { silent = true })
-vim.keymap.set("n", "<leader>w", ":w<CR>:so<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -15,6 +14,12 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
+
+-- Switch between panes
+vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>")
+vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>")
+vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>")
 
 -- VimTex
 vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>")

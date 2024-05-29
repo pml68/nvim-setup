@@ -1,4 +1,9 @@
 local plugins = {
+  -- tmux integration
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
   -- Oil.nvim
   {
     "stevearc/oil.nvim",
