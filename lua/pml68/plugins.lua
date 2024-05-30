@@ -4,22 +4,23 @@ local plugins = {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
-  -- Image support
-  {
-    "vhyrro/luarocks.nvim",
-    priority = 1001,
-    opts = {
-      rocks = { "magick" },
-    },
-  },
   {
     "3rd/image.nvim",
-    dependencies = { "vhyrro/luarocks.nvim" },
+    dependencies = {
+      "vhyrro/luarocks.nvim",
+      priority = 1001,
+      opts = {
+        rocks = { "magick" },
+      },
+    },
     ft = { "css", "scss", "html", "svelte", "markdown" },
     config = function()
       require("image").setup({
         backend = "ueberzug",
         integrations = {
+          markdown = {
+            only_render_image_at_cursor = true,
+          },
           neorg = {
             enabled = false,
           },
