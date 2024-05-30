@@ -25,6 +25,7 @@ vim.o.clipboard = "unnamedplus"
 vim.opt.whichwrap:append "<>[]hl"
 
 vim.o.foldmethod = "expr"
+vim.o.foldenable = false
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. ":" .. vim.env.PATH

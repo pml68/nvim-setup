@@ -4,6 +4,36 @@ local plugins = {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
+  -- Image support
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1001,
+    opts = {
+      rocks = { "magick" },
+    },
+  },
+  {
+    "3rd/image.nvim",
+    dependencies = { "vhyrro/luarocks.nvim" },
+    ft = { "css", "scss", "html", "svelte", "markdown" },
+    config = function()
+      require("image").setup({
+        backend = "ueberzug",
+        integrations = {
+          neorg = {
+            enabled = false,
+          },
+          html = {
+            enabled = true,
+          },
+          css = {
+            enabled = true,
+          },
+        },
+        max_width_window_percentage = 90,
+      })
+    end
+  },
   -- Oil.nvim
   {
     "stevearc/oil.nvim",
