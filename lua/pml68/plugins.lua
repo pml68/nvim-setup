@@ -94,48 +94,26 @@ local plugins = {
       require("pml68.configs.cmp")
     end,
   },
-  --Terminal
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    cmd = "ToggleTerm",
-    opts = {
-      shade_terminals = false,
-      persist_size = false,
-      size = function(term)
-        if term.direction == "horizontal" then
-          return 15
-        elseif term.direction == "vertical" then
-          return vim.o.columns * 0.4
-        end
-      end,
-    },
-    config = function(_, opts)
-      require("pml68.configs.toggleterm")
-      require("toggleterm").setup(opts)
-    end
-  },
   --Git
   {
     "lewis6991/gitsigns.nvim",
     event = "BufReadPost",
-    opts = {
-      signs = {
-        add = { text = "│" },
-        change = { text = "│" },
-        delete = { text = "󰍵" },
-        topdelete = { text = "‾" },
-        changedelete = { text = "~" },
-        untracked = { text = "│" },
-      },
-      on_attach = function(bufnr)
-        local gs = package.loaded.gitsigns
+    config = function()
+      require("gitsigns").setup({
+        signs = {
+          add = { text = "│" },
+          change = { text = "│" },
+          delete = { text = "󰍵" },
+          topdelete = { text = "‾" },
+          changedelete = { text = "~" },
+          untracked = { text = "│" },
+        },
+        on_attach = function(bufnr)
+          local gs = package.loaded.gitsigns
 
-        vim.keymap.set("n", "<leader>gb", gs.blame_line, { buffer = bufnr })
-      end,
-    },
-    config = function(_, opts)
-      require("gitsigns").setup(opts)
+          vim.keymap.set("n", "<leader>gb", gs.blame_line, { buffer = bufnr })
+        end,
+      })
     end
   },
   --LSP
