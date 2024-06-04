@@ -47,6 +47,15 @@ local plugins = {
         view_options = {
           show_hidden = true,
         },
+        float = {
+          padding = 2,
+          max_width = 50,
+          max_height = 0,
+          border = "single",
+          win_options = {
+            winblend = 0,
+          },
+        },
       })
     end
   },

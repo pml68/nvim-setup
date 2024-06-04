@@ -13,6 +13,7 @@ vim.o.mouse = "a"
 vim.o.smartindent = true
 
 vim.o.swapfile = false
+vim.o.backup = false
 
 vim.o.scrolloff = 10
 vim.o.cursorline = false

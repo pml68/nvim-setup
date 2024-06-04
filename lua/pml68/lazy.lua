@@ -15,6 +15,9 @@ local plugins = require("pml68.plugins")
 
 require("lazy").setup(plugins, {
   defaults = { lazy = true },
+  change_detection = {
+    notify = false,
+  },
   performance = {
     cache = {
       enabled = true,
