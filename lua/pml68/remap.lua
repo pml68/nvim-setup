@@ -9,6 +9,15 @@ vim.keymap.set("n", "<leader>b", "<cmd>!chmod 755 %<CR>", { silent = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- u/soer9459
+vim.keymap.set('n', '<leader>;',
+  function()
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    vim.cmd('norm A;')
+    vim.api.nvim_win_set_cursor(0, cursor)
+  end,
+  { noremap = true, silent = true })
+
 -- Switch between windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
