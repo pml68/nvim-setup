@@ -4,6 +4,7 @@ local plugins = {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
+  -- Image support
   {
     "3rd/image.nvim",
     dependencies = {
