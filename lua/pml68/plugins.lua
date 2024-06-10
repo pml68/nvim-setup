@@ -1,4 +1,10 @@
 local plugins = {
+  -- Visual surround
+  {
+    "NStefan002/visual-surround.nvim",
+    event = "BufReadPost",
+    config = true,
+  },
   -- tmux integration
   {
     "christoomey/vim-tmux-navigator",
