@@ -53,6 +53,10 @@ local plugins = {
         },
         view_options = {
           show_hidden = true,
+          natural_order = true,
+          is_always_hidden = function (name, _)
+            return name == '.git'
+          end
         },
         float = {
           padding = 2,
@@ -63,6 +67,8 @@ local plugins = {
             winblend = 0,
           },
         },
+        skip_confirm_for_simple_edits = true,
+        default_file_explorer = true,
       })
     end
   },
