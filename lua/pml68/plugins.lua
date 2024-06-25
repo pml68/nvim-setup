@@ -54,7 +54,7 @@ local plugins = {
         view_options = {
           show_hidden = true,
           natural_order = true,
-          is_always_hidden = function (name, _)
+          is_always_hidden = function(name, _)
             return name == '.git'
           end
         },
@@ -251,7 +251,7 @@ local plugins = {
     dependencies = {
       "nvimdev/guard-collection"
     },
-    event = "BufReadPre",
+    ft = { "c", "cpp", "json" },
     config = function()
       local ft = require("guard.filetype")
 
