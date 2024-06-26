@@ -2,7 +2,7 @@ local plugins = {
   -- Visual surround
   {
     "NStefan002/visual-surround.nvim",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     config = true,
   },
   -- tmux integration
@@ -75,7 +75,7 @@ local plugins = {
   --Color highlighting
   {
     "brenoprata10/nvim-highlight-colors",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("nvim-highlight-colors").setup({
         render = 'virtual',
@@ -87,7 +87,7 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("ibl").setup()
     end
@@ -121,7 +121,7 @@ local plugins = {
   --Git
   {
     "lewis6991/gitsigns.nvim",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("gitsigns").setup({
         signs = {
@@ -143,7 +143,7 @@ local plugins = {
   --LSP
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("pml68.configs.lspconfig")
     end
@@ -229,7 +229,7 @@ local plugins = {
   --Misc
   {
     "andweeb/presence.nvim",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     opts = {
       main_image = "file",
       log_level = "debug",
