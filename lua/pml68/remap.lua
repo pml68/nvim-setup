@@ -8,6 +8,8 @@ vim.keymap.set("n", "<leader>fo", "=ap")
 vim.keymap.set("n", "<leader>b", "<cmd>!chmod 755 %<CR>", { silent = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<leader>sl", "<cmd>exec \"normal i\".nr2char(getchar()).\"\\e\"<CR>")
+vim.keymap.set("n", "<leader>sc", "<cmd>exec \"normal a\".nr2char(getchar()).\"\\e\"<CR>")
 
 -- u/soer9459
 vim.keymap.set('n', '<leader>;',
