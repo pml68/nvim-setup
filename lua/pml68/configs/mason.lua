@@ -2,6 +2,7 @@ return {
   ensure_installed = {
     "asm-lsp",
     "bash-language-server",
+    "termux-language-server",
     "lua-language-server",
     "clangd",
     "clang-format",
