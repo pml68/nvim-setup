@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
     local opts = { buffer = event.buf }
 
-    vim.keymap.set('n', '<leader>gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    vim.keymap.set('n', '<leader>gh', '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" } })<CR>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
