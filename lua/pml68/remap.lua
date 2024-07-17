@@ -77,18 +77,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, { silent = true })
   end
 })
-
--- Netrw (u/vonheikemen)
-vim.api.nvim_create_autocmd('filetype', {
-  pattern = 'netrw',
-  desc = 'Better mappings for netrw',
-  callback = function()
-    local bind = function(lhs, rhs)
-      vim.keymap.set('n', lhs, rhs, { remap = true, buffer = true })
-    end
-
-    bind('a', '%')
-
-    bind('r', 'R')
-  end
-})
