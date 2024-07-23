@@ -3,6 +3,9 @@ vim.o.nu = true
 
 vim.o.conceallevel = 2
 
+vim.o.laststatus = 3
+vim.o.statusline = " %f %m %= %l:%c "
+
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
