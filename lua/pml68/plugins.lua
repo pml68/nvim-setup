@@ -172,6 +172,7 @@ local plugins = {
           "asm",
           "c",
           "cpp",
+          "c_sharp",
           "lua",
           "kotlin",
           "bash",

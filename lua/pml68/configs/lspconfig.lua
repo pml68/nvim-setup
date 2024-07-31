@@ -19,7 +19,8 @@ local servers = {
   "rust_analyzer",
   "kotlin_language_server",
   "lua_ls",
-  "glsl_analyzer"
+  "glsl_analyzer",
+  "csharp_ls",
 }
 
 for _, server in pairs(servers) do

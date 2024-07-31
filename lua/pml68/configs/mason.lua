@@ -16,7 +16,8 @@ return {
     "pyright",
     "rust-analyzer",
     "glsl_analyzer",
-    "kotlin-language-server"
+    "kotlin-language-server",
+    "csharp-language-server",
   },
   PATH = "skip",
   ui = {
