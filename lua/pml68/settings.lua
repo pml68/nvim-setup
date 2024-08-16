@@ -4,7 +4,34 @@ vim.o.nu = true
 vim.o.conceallevel = 2
 
 vim.o.laststatus = 3
-vim.o.statusline = " %f %m %= [%{&filetype}] %l:%c "
+
+local function branch_name()
+  local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
+  if branch ~= "" then
+    return " " .. branch
+  else
+    return ""
+  end
+end
+
+vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "FocusGained" }, {
+  callback = function()
+    vim.b.branch_name = branch_name()
+  end
+})
+
+function Status_Line()
+  return " "
+      .. "%<"
+      .. " %f "
+      .. vim.b.branch_name
+      .. " %m"
+      .. " %="
+      .. " [%{&filetype}]"
+      .. " %l:%c "
+end
+
+vim.opt.statusline = "%{%v:lua.Status_Line()%}"
 
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
