@@ -50,10 +50,6 @@ vim.keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<CR>", {})
 vim.keymap.set('n', '<leader>fz', "<cmd>Telescope current_buffer_fuzzy_find<CR>", {})
 vim.keymap.set('n', '<leader>fg', "<cmd>Telescope git_files<CR>", {})
 
--- Toggleterm
-vim.keymap.set("n", "<leader>h", "<cmd>ToggleTerm direction=horizontal<CR>")
-vim.keymap.set("n", "<leader>v", "<cmd>ToggleTerm direction=vertical<CR>")
-
 -- Diagnostics, LSP
 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
