@@ -5,7 +5,8 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'vimtex' },
-    { name = 'crates' }
+    { name = 'crates' },
+    { name = 'emoji' },
   }, {
     { name = 'buffer' },
   }),
