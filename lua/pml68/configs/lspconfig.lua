@@ -8,7 +8,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 local servers = {
   -- "asm_lsp",
   "html",
-  "tsserver",
+  "ts_ls",
   "cssls",
   "svelte",
   "bashls",
