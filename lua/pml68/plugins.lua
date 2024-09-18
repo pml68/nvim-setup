@@ -225,7 +225,7 @@ local plugins = {
     dependencies = {
       "nvimdev/guard-collection"
     },
-    ft = { "c", "cpp", "json", "lua", "python" },
+    ft = { "c", "cpp", "json", "lua", "python", "cs" },
     config = function()
       local ft = require("guard.filetype")
 
