@@ -6,15 +6,15 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohl<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>")
 vim.keymap.set("n", "<leader>fo", "=ap")
 vim.keymap.set("n", "<leader>b", "<cmd>!chmod 755 %<CR>", { silent = true })
-vim.keymap.set("n", "<leader>j", "ddp")
-vim.keymap.set("n", "<leader>k", "ddkP")
+vim.keymap.set("n", "<A-J>", "ddp")
+vim.keymap.set("n", "<A-K>", "ddkP")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>sl", "<cmd>exec \"normal i\".nr2char(getchar()).\"\\e\"<CR>")
 vim.keymap.set("n", "<leader>sc", "<cmd>exec \"normal a\".nr2char(getchar()).\"\\e\"<CR>")
 
 -- u/soer9459
-vim.keymap.set('n', '<leader>;',
+vim.keymap.set('n', '<leader>,',
   function()
     local cursor = vim.api.nvim_win_get_cursor(0)
     vim.cmd('norm A;')

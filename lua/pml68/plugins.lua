@@ -186,6 +186,7 @@ local plugins = {
           "python",
           "rust",
           "markdown",
+          "markdown_inline",
           "yaml",
           "json",
           "glsl",
@@ -266,7 +267,6 @@ local plugins = {
   --JSON
   {
     "b0o/schemastore.nvim",
-    ft = "json",
   },
   --Rust
   {
