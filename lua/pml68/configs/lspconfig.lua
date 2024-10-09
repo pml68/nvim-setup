@@ -14,7 +14,7 @@ local servers = {
   "bashls",
   "clangd",
   "pyright",
-  "emmet_ls",
+  "emmet_language_server",
   "jsonls",
   "rust_analyzer",
   "kotlin_language_server",

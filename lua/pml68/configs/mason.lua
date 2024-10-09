@@ -9,7 +9,7 @@ return {
     "jq",
     "json-lsp",
     "svelte-language-server",
-    "emmet-ls",
+    "emmet-language-server",
     "html-lsp",
     "css-lsp",
     "typescript-language-server",
