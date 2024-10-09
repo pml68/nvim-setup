@@ -23,7 +23,7 @@ local plugins = {
           show_hidden = true,
           natural_order = true,
           is_always_hidden = function(name, _)
-            return name == '.git'
+            return name == '.git' or name == "node_modules" or name == "target"
           end
         },
         float = {
@@ -220,6 +220,10 @@ local plugins = {
     version = "*",
     config = true
   },
+  {
+    "eandrju/cellular-automaton.nvim",
+    cmd = "CellularAutomaton",
+  },
   --Formatting
   {
     "nvimdev/guard.nvim",
@@ -235,11 +239,10 @@ local plugins = {
         cmd = "jq",
         stdin = true
       })
-
-      require("guard").setup({
+      vim.g.guard_config = {
         fmt_on_save = true,
         lsp_as_default_formatter = true
-      })
+      }
     end
   },
   --PKL

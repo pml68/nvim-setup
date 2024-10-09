@@ -24,8 +24,6 @@ require("lazy").setup(plugins, {
     },
     rtp = {
       disabled_plugins = {
-        "matchit",
-        "matchparen",
         "gzip",
         "tarPlugin",
         "tohtml",
@@ -35,5 +33,8 @@ require("lazy").setup(plugins, {
         "netrwPlugin",
       },
     },
+  },
+  ui = {
+    border = "rounded"
   },
 })

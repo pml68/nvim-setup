@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>rn", "<cmd>set rnu!<CR>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohl<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>")
 vim.keymap.set("n", "<leader>fo", "=ap")
-vim.keymap.set("n", "<leader>b", "<cmd>!chmod 755 %<CR>", { silent = true })
+vim.keymap.set("n", "<leader><leader>", "<cmd>!chmod 755 %<CR>", { silent = true })
 vim.keymap.set("n", "<A-J>", "ddp")
 vim.keymap.set("n", "<A-K>", "ddkP")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -34,6 +34,9 @@ vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>")
 vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>")
 vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>")
+
+-- Cellular Automaton
+vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
 
 -- VimTex
 vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>")
