@@ -46,7 +46,7 @@ local plugins = {
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("nvim-highlight-colors").setup({
-        render = 'virtual',
+        render = 'background',
         enable_tailwind = true,
       })
     end
