@@ -245,28 +245,6 @@ local plugins = {
       }
     end
   },
-  --PKL
-  {
-    "apple/pkl-neovim",
-    event = "BufReadPre *.pkl",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter"
-    },
-    build = function()
-      vim.cmd("TSInstall! pkl")
-    end
-  },
-  -- Helium
-  {
-    "pml68/helium-neovim",
-    event = "BufReadPre *.hsm",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter"
-    },
-    build = function()
-      vim.cmd("TSInstall! helium")
-    end
-  },
   --JSON
   {
     "b0o/schemastore.nvim",
