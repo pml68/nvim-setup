@@ -17,6 +17,7 @@ return {
     "rust-analyzer",
     "glsl_analyzer",
     "kotlin-language-server",
+    "jdtls",
     "csharp-language-server",
   },
   PATH = "skip",

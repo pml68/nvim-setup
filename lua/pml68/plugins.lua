@@ -176,6 +176,7 @@ local plugins = {
           "c_sharp",
           "lua",
           "kotlin",
+          "java",
           "bash",
           "html",
           "scss",
@@ -248,6 +249,10 @@ local plugins = {
   --JSON
   {
     "b0o/schemastore.nvim",
+  },
+  -- Java
+  {
+    "mfussenegger/nvim-jdtls"
   },
   --Rust
   {
