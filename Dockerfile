@@ -32,7 +32,6 @@ RUN apk add --no-cache wget \
 # install TeX
 RUN apk add --no-cache texlive \
                        texlive-binextra \
-                       texmf-dist-fontsextra \
                        texmf-dist-fontutils \
                        texmf-dist-fontsrecommended \
                        texmf-dist-formatsextra \

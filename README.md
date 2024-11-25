@@ -22,4 +22,4 @@ And then run it
 docker run -it neovim:latest bash
 ```
 
-The image size is somewhere around 5.9GB due to every language I use being included (C# with .NET, Java 21 and 17 etc.)
+The image size is somewhere around 4.5GB due to every language I use being included (C# with .NET, Java 21 and 17 etc.)
