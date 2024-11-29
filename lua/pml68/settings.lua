@@ -16,12 +16,11 @@ end
 
 
 local function get_attached_clients()
-  local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
+  local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
   if #buf_clients == 0 then
     return "LSP Inactive"
   end
 
-  local buf_ft = vim.bo.filetype
   local buf_client_names = {}
 
   for _, client in pairs(buf_clients) do

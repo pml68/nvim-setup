@@ -34,7 +34,6 @@ RUN apk add --no-cache texlive \
                        texlive-binextra \
                        texmf-dist-fontutils \
                        texmf-dist-fontsrecommended \
-                       texmf-dist-formatsextra \
                        texmf-dist-langenglish \
                        texmf-dist-langeuropean \
                        texmf-dist-latexextra \

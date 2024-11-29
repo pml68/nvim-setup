@@ -1,3 +1,5 @@
 nvim
 Neovim
 config
+wayland
+stdout
