@@ -11,9 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = require("pml68.plugins")
-
-require("lazy").setup(plugins, {
+require("lazy").setup("pml68.plugins", {
   defaults = { lazy = true },
   change_detection = {
     notify = false,
