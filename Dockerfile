@@ -24,6 +24,7 @@ RUN apk add --no-cache wget \
                        openjdk21 \
                        openjdk17 \
                        gradle \
+                       go \
                        dotnet8-sdk \
                        clang19-extra-tools \
                        nodejs \
@@ -51,9 +52,9 @@ COPY . .config/nvim
 FROM base
 SHELL ["/bin/bash", "-c"]
 WORKDIR /root
-RUN nvim --headless +"Lazy! sync" +qa; exit 0
+RUN nvim --headless +"Lazy! sync" +qa; rm -rf /root/.cache
 
 # symlink the clangd executable, since it can't be installed with mason
 RUN ln -sf /usr/bin/clangd /root/.local/share/nvim/mason/bin/clangd
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]

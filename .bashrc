@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export PATH=$PATH:/root/.cargo/bin:/root/go/bin
 export CPPFLAGS="-Wall -Weffc++ -Wextra -Werror -Wconversion -Wsign-conversion -pedantic-errors -std=gnu++2b -fmodules-ts"
 export EDITOR=nvim
 export HISTSIZE=1000
