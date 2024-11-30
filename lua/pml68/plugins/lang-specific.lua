@@ -7,6 +7,14 @@ return {
   {
     "mfussenegger/nvim-jdtls"
   },
+  -- Go
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    build = function()
+      vim.cmd("silent! GoInstallDeps")
+    end,
+  },
   -- Rust
   {
     "rust-lang/rust.vim",

@@ -42,6 +42,12 @@ vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
 vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>")
 vim.keymap.set("n", "<leader>vl", "<cmd>VimtexView<CR>")
 
+-- Go
+vim.keymap.set("n", "<leader>gj", "<cmd>GoTagAdd json<CR>")
+vim.keymap.set("n", "<leader>gy", "<cmd>GoTagAdd yaml<CR>")
+vim.keymap.set("n", "<leader>ge", "<cmd>GoIfErr<CR>")
+vim.keymap.set("n", "<leader>gt", "<cmd>GoMod tidy<CR>")
+
 -- Screenkey
 vim.keymap.set("n", "<leader>sk", "<cmd>Screenkey<CR>")
 

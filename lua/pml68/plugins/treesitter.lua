@@ -30,6 +30,11 @@ return {
         "gitignore",
         "gitattributes",
         "gitcommit",
+        "go",
+        "gosum",
+        "gomod",
+        "gotmpl",
+        "gowork",
       },
       highlight = {
         enable = true

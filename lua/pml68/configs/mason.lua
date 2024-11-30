@@ -19,6 +19,9 @@ return {
     "kotlin-language-server",
     "jdtls",
     "csharp-language-server",
+    "gopls",
+    "gofumpt",
+    "golines",
   },
   PATH = "skip",
   ui = {
