@@ -1,13 +1,13 @@
 return {
   {
-    "brenoprata10/nvim-highlight-colors",
+    "uga-rosa/ccc.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require("nvim-highlight-colors").setup({
-        render = 'background',
-        enable_tailwind = true,
-      })
-    end
+    opts = {
+      highlighter = {
+        auto_enable = true,
+        lsp = true,
+      },
+    },
   },
   {
     "rose-pine/neovim",

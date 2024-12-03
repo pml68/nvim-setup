@@ -4,7 +4,7 @@ vim.keymap.set("n", "<leader>n", "<cmd>set nu!<CR>")
 vim.keymap.set("n", "<leader>rn", "<cmd>set rnu!<CR>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohl<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>")
-vim.keymap.set("n", "<leader>fo", "=ap")
+vim.keymap.set("n", "<leader>fb", "=ap")
 vim.keymap.set("n", "<leader><leader>", "<cmd>!chmod 755 %<CR>", { silent = true })
 vim.keymap.set("n", "<A-J>", "ddp")
 vim.keymap.set("n", "<A-K>", "ddkP")
@@ -38,6 +38,9 @@ vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>")
 -- Cellular Automaton
 vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
 
+-- Color picker
+vim.keymap.set("n", "<leader>cc", "<cmd>CccPick<CR>")
+
 -- VimTex
 vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>")
 vim.keymap.set("n", "<leader>vl", "<cmd>VimtexView<CR>")
@@ -54,10 +57,11 @@ vim.keymap.set("n", "<leader>sk", "<cmd>Screenkey<CR>")
 -- Telescope
 vim.keymap.set('n', '<leader>ff', "<cmd>Telescope find_files<CR>", {})
 vim.keymap.set('n', '<leader>fw', "<cmd>Telescope live_grep<CR>", {})
-vim.keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<CR>", {})
+vim.keymap.set('n', '<leader>fo', "<cmd>Telescope buffers<CR>", {})
 vim.keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<CR>", {})
 vim.keymap.set('n', '<leader>fz', "<cmd>Telescope current_buffer_fuzzy_find<CR>", {})
 vim.keymap.set('n', '<leader>fg', "<cmd>Telescope git_files<CR>", {})
+vim.keymap.set('n', '<leader>fd', "<cmd>Telescope diagnostics<CR>", {})
 
 -- Diagnostics, LSP
 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>')

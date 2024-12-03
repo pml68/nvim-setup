@@ -9,6 +9,9 @@ return {
     lazy = false,
   },
   {
+    "artemave/workspace-diagnostics.nvim",
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = { "BufReadPost", "BufNewFile" },

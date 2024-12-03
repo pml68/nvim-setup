@@ -38,6 +38,9 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 for _, server in pairs(servers) do
   local opts = {
     capabilities = capabilities,
+    on_attach = function(client, bufnr)
+      require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+    end
   }
 
   local require_ok, conf_opts = pcall(require, "pml68.configs.settings." .. server)
