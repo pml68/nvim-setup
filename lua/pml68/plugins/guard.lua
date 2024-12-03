@@ -8,6 +8,7 @@ return {
     local ft = require("guard.filetype")
 
     ft("c,cpp,h"):fmt("clang-format")
+    ft("rust"):fmt("rustfmt")
     ft("json"):fmt({
       cmd = "jq",
       stdin = true
