@@ -3,3 +3,8 @@ Neovim
 config
 wayland
 stdout
+repo
+distros
+suckless
+Rosé
+tmux

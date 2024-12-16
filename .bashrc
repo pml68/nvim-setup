@@ -6,7 +6,6 @@
 [[ $- != *i* ]] && return
 
 export PATH=$PATH:/root/.cargo/bin:/root/go/bin
-export CPPFLAGS="-Wall -Weffc++ -Wextra -Werror -Wconversion -Wsign-conversion -pedantic-errors -std=gnu++2b -fmodules-ts"
 export EDITOR=nvim
 export HISTSIZE=1000
 export HISTFILESIZE=2000
@@ -32,10 +31,10 @@ avg_time() {
     /user/ { user = user + $2; nu++ }
     /sys/  { sys  = sys  + $2; ns++}
     END    {
-    if (nr>0) printf("real %f\n", real/nr);
-    if (nu>0) printf("user %f\n", user/nu);
-        if (ns>0) printf("sys %f\n",  sys/ns)
-        }'
+      if (nr>0) printf("real %f\n", real/nr);
+      if (nu>0) printf("user %f\n", user/nu);
+      if (ns>0) printf("sys %f\n",  sys/ns)
+    }'
 }
 
 alias grep='grep --color=auto'
