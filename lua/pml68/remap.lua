@@ -62,6 +62,28 @@ vim.keymap.set('n', '<leader>fh', "<cmd>Telescope help_tags<CR>", {})
 vim.keymap.set('n', '<leader>fz', "<cmd>Telescope current_buffer_fuzzy_find<CR>", {})
 vim.keymap.set('n', '<leader>fg', "<cmd>Telescope git_files<CR>", {})
 vim.keymap.set('n', '<leader>fd', "<cmd>Telescope diagnostics<CR>", {})
+vim.keymap.set('n', '<leader>ft', function()
+  local telescope = require("telescope.builtin")
+  local todo_files = {}
+
+  local handle = io.popen("rg --files -g 'TODO.{md,txt}'")
+  local result = handle:read("*a")
+  handle:close()
+
+  for file in result:gmatch("[^\r\n]+") do
+    table.insert(todo_files, file)
+  end
+
+  if #todo_files > 0 then
+    telescope.find_files({
+      prompt_title = "Choose TODO file",
+      cwd = vim.fn.getcwd(),
+      search_dirs = todo_files
+    })
+  else
+    telescope.grep_string({ search = "TODO" })
+  end
+end, { noremap = true, silent = true })
 
 -- Diagnostics, LSP
 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>')

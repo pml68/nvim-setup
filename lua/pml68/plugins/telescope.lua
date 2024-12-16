@@ -5,4 +5,11 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim"
   },
+  opts = {
+    pickers = {
+      find_files = {
+        find_command = { "rg", "--files", "--hidden" },
+      },
+    },
+  },
 }
