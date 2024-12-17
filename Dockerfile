@@ -19,7 +19,7 @@ RUN apk add --no-cache wget \
                        gzip \
                        neovim-doc \
                        ripgrep \
-                       rust \
+                       rustup \
                        python3 \
                        openjdk21 \
                        openjdk17 \
@@ -30,20 +30,13 @@ RUN apk add --no-cache wget \
                        nodejs \
                        npm 
 
-# install TeX
-RUN apk add --no-cache texlive \
-                       texlive-binextra \
-                       texmf-dist-fontutils \
-                       texmf-dist-fontsrecommended \
-                       texmf-dist-langenglish \
-                       texmf-dist-langeuropean \
-                       texmf-dist-latexextra \
-                       texmf-dist-latexrecommended \
-                       texmf-dist-pictures \
-                       texmf-dist-plaingeneric 
-
 # pre-download lazy.nvim
 RUN git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable /root/.local/share/nvim/lazy/lazy.nvim
+
+RUN rustup-init -y --default-toolchain none
+RUN /root/.cargo/bin/rustup toolchain install nightly --allow-downgrade --profile minimal --component rustfmt,rust-src,clippy
+
+RUN echo -e "[unstable]\ngc = true" > /root/.cargo/config.toml
 
 # copy config files
 COPY .bashrc .bashrc

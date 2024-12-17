@@ -7,8 +7,6 @@ on:
     tags:
       - v*
   pull_request:
-env:
-  IMAGE_NAME: neovim
 
 jobs:
   push:
@@ -17,11 +15,11 @@ jobs:
         image: [
           {
             dockerfile: 'Dockerfile',
-            tag: ''
+            tag: 'neovim'
           },
           {
-            dockerfile: 'Dockerfile.no-tex',
-            tag: 'no-tex-'
+            dockerfile: 'Dockerfile.tex',
+            tag: 'neovim-tex'
           },
         ]
     runs-on: ubuntu-latest
@@ -33,21 +31,18 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build image
-        run: docker build . --file ${{ matrix.image.dockerfile }} --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
+        run: docker build . --file ${{ matrix.image.dockerfile }} --tag ${{ matrix.image.tag }} --label "runnumber=${GITHUB_RUN_ID}"
 
       - name: Log in to registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Push image
-        run: |
-          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+        run: docker push ${{ matrix.image.tag }}
 
-          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-          TAG=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && TAG=$(echo $TAG | sed -e 's/^v//')
-          [ "$TAG" == "master" ] && TAG="latest"
-          TAG=${{ matrix.image.tag }}$TAG
-          echo IMAGE_ID=$IMAGE_ID
-          echo TAG=$TAG
-          docker tag $IMAGE_NAME $IMAGE_ID:$TAG
-          docker push $IMAGE_ID:$TAG
+      - name: Delete previous releases
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: ${{ matrix.image.tag }}
+          package-type: 'container'
+          min-versions-to-keep: 0
+          delete-only-untagged-versions: 'true'
