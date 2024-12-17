@@ -37,7 +37,10 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Push image
-        run: docker push ${{ matrix.image.tag }}
+        run: |
+          IMAGE_TAG=ghcr.io/${{ github.repository_owner }}/${{ matrix.image.tag }}
+          docker tag ${{ matrix.image.tag }} $IMAGE_TAG
+          docker push $IMAGE_TAG
 
       - name: Delete previous releases
         uses: actions/delete-package-versions@v5
