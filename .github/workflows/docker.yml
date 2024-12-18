@@ -2,11 +2,13 @@ name: Docker Image
 
 on:
   push:
-    branches:
-      - master
-    tags:
-      - v*
+    paths-ignore:
+      - README.md
+      - .gitignore
   pull_request:
+    paths-ignore:
+      - README.md
+      - .gitignore
 
 jobs:
   push:
