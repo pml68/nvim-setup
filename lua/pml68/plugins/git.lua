@@ -15,6 +15,7 @@ return {
         local gs = package.loaded.gitsigns
 
         vim.keymap.set("n", "<leader>gb", gs.blame_line, { buffer = bufnr })
+        vim.keymap.set("n", "<leader>gr", gs.reset_hunk, { buffer = bufnr })
       end,
     })
   end
