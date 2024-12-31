@@ -10,11 +10,20 @@ cmp.setup({
   }, {
     { name = 'buffer' },
   }),
+  snippet = {
+    expand = function (args)
+      vim.snippet.expand(args.body)
+    end,
+  },
   window = {
     completion = {
       border = "rounded",
       scrollbar = false,
-    }
+    },
+    documentation = {
+      border = "rounded",
+      scrollbar = false,
+    },
   },
   preselect = 'item',
   completion = {
