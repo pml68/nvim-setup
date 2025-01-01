@@ -6,12 +6,11 @@ cmp.setup({
     { name = 'path' },
     { name = 'vimtex' },
     { name = 'crates' },
-    { name = 'emoji' },
   }, {
     { name = 'buffer' },
   }),
   snippet = {
-    expand = function (args)
+    expand = function(args)
       vim.snippet.expand(args.body)
     end,
   },
@@ -24,10 +23,6 @@ cmp.setup({
       border = "rounded",
       scrollbar = false,
     },
-  },
-  preselect = 'item',
-  completion = {
-    completeopt = 'menu,menuone,noinsert'
   },
   mapping = cmp.mapping.preset.insert({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),

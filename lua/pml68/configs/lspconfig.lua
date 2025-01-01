@@ -1,4 +1,7 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = vim.tbl_deep_extend("force",
+  vim.lsp.protocol.make_client_capabilities(),
+  require('cmp_nvim_lsp').default_capabilities()
+)
 local lspconfig = require("lspconfig")
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -45,7 +48,7 @@ for _, server in pairs(servers) do
 
   local require_ok, conf_opts = pcall(require, "pml68.configs.settings." .. server)
   if require_ok then
-    opts = vim.tbl_deep_extend("force", conf_opts, opts)
+    opts = vim.tbl_deep_extend("force", opts, conf_opts)
   end
 
   lspconfig[server].setup(opts)

@@ -3,12 +3,11 @@ return {
   dependencies = {
     "nvimdev/guard-collection"
   },
-  event = { "BufReadPost", "BufNewFile" },
+  ft = { "c", "cpp", "h", "json", "go", "lua" },
   config = function()
     local ft = require("guard.filetype")
 
     ft("c,cpp,h"):fmt("clang-format")
-    ft("rust"):fmt("lsp")
     ft("json"):fmt({
       cmd = "jq",
       stdin = true

@@ -15,6 +15,17 @@ return {
   },
   -- Rust
   {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+    config = function()
+      vim.keymap.set("n", "<leader>rts", "<cmd>RustTest<CR>")
+      vim.keymap.set("n", "<leader>rta", "<cmd>RustTest!<CR>")
+    end
+  },
+  {
     "saecki/crates.nvim",
     tag = "stable",
     dependencies = "hrsh7th/nvim-cmp",
@@ -35,6 +46,6 @@ return {
     ft = "tex",
     init = function()
       vim.g.vimtex_view_method = 'mupdf'
-    end
+    end,
   },
 }
