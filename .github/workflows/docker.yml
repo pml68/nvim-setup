@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ${{ matrix.image.dockerfile }}
+          file: ./${{ matrix.image.dockerfile }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
