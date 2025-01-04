@@ -46,7 +46,7 @@ RUN apk add --no-cache texlive \
 RUN git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable /root/.local/share/nvim/lazy/lazy.nvim
 
 # set up Rust
-RUN rustup-init -y --default-toolchain none && /root/.cargo/bin/rustup toolchain install nightly --allow-downgrade --profile minimal --component rustfmt,rust-src,clippy && echo -e "[unstable]\ngc = true" > /root/.cargo/config.toml
+RUN rustup-init -y --default-toolchain none && /root/.cargo/bin/rustup toolchain install nightly --allow-downgrade --profile minimal --component rustfmt,rust-src,clippy,rust-analyzer && echo -e "[unstable]\ngc = true" > /root/.cargo/config.toml
 
 # copy config files
 COPY .bashrc .bashrc

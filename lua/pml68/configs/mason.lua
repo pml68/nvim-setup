@@ -14,7 +14,6 @@ return {
     "css-lsp",
     "typescript-language-server",
     "pyright",
-    "rust-analyzer",
     "glsl_analyzer",
     "kotlin-language-server",
     "jdtls",
