@@ -30,19 +30,23 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Build image
-        run: docker build . --file ${{ matrix.image.dockerfile }} --tag ${{ matrix.image.tag }} --label "runnumber=${GITHUB_RUN_ID}"
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Log in to registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Push image
-        run: |
-          IMAGE_TAG=ghcr.io/${{ github.repository_owner }}/${{ matrix.image.tag }}
-          docker tag ${{ matrix.image.tag }} $IMAGE_TAG
-          docker push $IMAGE_TAG
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ${{ matrix.image.dockerfile }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/${{ matrix.image.tag }}:latest
+          labels: |
+            runnumber=${GITHUB_RUN_ID}
 
       - name: Delete previous releases
         uses: actions/delete-package-versions@v5
