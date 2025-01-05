@@ -46,6 +46,7 @@ WORKDIR /root
 RUN nvim --headless +"Lazy! sync" +qa; rm -rf /root/.cache
 
 # symlink the clangd executable, since it can't be installed with mason
-RUN ln -sf /usr/bin/clangd /root/.local/share/nvim/mason/bin/clangd
+# also symlink rust-analyzer
+RUN ln -sf /usr/bin/clangd /root/.local/share/nvim/mason/bin/clangd && ln -sf /root/.rustup/toolchains/nightly-x86_64-unknown-linux-musl/bin/rust-analyzer /root/.local/share/nvim/mason/bin/rust-analyzer
 
 ENTRYPOINT ["/bin/bash"]
