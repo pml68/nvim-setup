@@ -14,6 +14,11 @@ local function branch_name()
   end
 end
 
+local function diagnostics()
+  local warns = vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.WARN })
+  local errors = vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.ERROR })
+  return string.format("[ %d| %d]", #warns, #errors)
+end
 
 local function get_attached_clients()
   local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
@@ -59,6 +64,8 @@ function Status_Line()
       .. vim.b.branch_name
       .. " %m"
       .. " %= "
+      .. diagnostics()
+      .. " "
       .. get_attached_clients()
       .. " [%{&filetype}]"
       .. " %l:%c "
