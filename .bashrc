@@ -9,7 +9,6 @@ export PATH=$PATH:/root/.cargo/bin:/root/go/bin
 export EDITOR=nvim
 export HISTSIZE=1000
 export HISTFILESIZE=2000
-export TERM=xterm-256color
 
 YELLOW="\[$(tput setaf 3)\]"
 GREEN="\[$(tput setaf 2)\]"

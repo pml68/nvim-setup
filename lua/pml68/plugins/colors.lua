@@ -10,7 +10,7 @@ return {
     },
   },
   {
-    "rose-pine/neovim",
+    "pml68/rosepine-tmuxed",
     name = "rose-pine",
     priority = 1000,
     lazy = false,
@@ -21,7 +21,7 @@ return {
           italic = false,
         },
         highlight_groups = {
-          StatusLine = { fg = "iris", bg = "iris", blend = 10 },
+          StatusLine = { fg = "iris", bg = "iris", blend = 25 },
           StatusLineNC = { fg = "subtle", bg = "surface" },
         },
       })

@@ -17,7 +17,7 @@ end
 local function diagnostics()
   local warns = vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.WARN })
   local errors = vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.ERROR })
-  return string.format("[ %d| %d]", #warns, #errors)
+  return string.format(" %d |  %d", #warns, #errors)
 end
 
 local function get_attached_clients()
