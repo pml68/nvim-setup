@@ -14,16 +14,11 @@ jobs:
   push:
     strategy:
       matrix:
-        image: [
-          {
-            dockerfile: 'Dockerfile',
+        include:
+          - dockerfile: 'Dockerfile'
             tag: 'neovim'
-          },
-          {
-            dockerfile: 'Dockerfile.tex',
+          - dockerfile: 'Dockerfile.tex'
             tag: 'neovim-tex'
-          },
-        ]
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -40,23 +35,23 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build image
+      - name: Build
         uses: docker/build-push-action@v6
         with:
-          file: ${{ matrix.image.dockerfile }}
+          file: ${{ matrix.dockerfile }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           load: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ matrix.image.tag }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ matrix.tag }}:latest
 
-      - name: Push image
-        run: docker push ghcr.io/${{ github.repository_owner }}/${{ matrix.image.tag }}:latest
+      - name: Push
+        run: docker push ghcr.io/${{ github.repository_owner }}/${{ matrix.tag }}:latest
 
       - name: Delete previous releases
         uses: actions/delete-package-versions@v5
         with:
-          package-name: ${{ matrix.image.tag }}
+          package-name: ${{ matrix.tag }}
           package-type: 'container'
           min-versions-to-keep: 0
           delete-only-untagged-versions: 'true'
