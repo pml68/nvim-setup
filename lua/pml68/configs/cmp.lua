@@ -14,6 +14,9 @@ cmp.setup({
       vim.snippet.expand(args.body)
     end,
   },
+  performance = {
+    throttle = 0,
+  },
   window = {
     completion = {
       border = "rounded",
