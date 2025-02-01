@@ -62,5 +62,3 @@ RUN nvim --headless +"Lazy! sync" +qa; rm -rf /root/.cache
 RUN ln -sf /usr/bin/clangd /root/.local/share/nvim/mason/bin/clangd && ln -sf /root/.rustup/toolchains/nightly-x86_64-unknown-linux-musl/bin/rust-analyzer /root/.local/share/nvim/mason/bin/rust-analyzer
 
 ENTRYPOINT ["/bin/bash"]
-
-# vi: ft=dockerfile

@@ -17,7 +17,7 @@ jobs:
         include:
           - dockerfile: 'Dockerfile'
             tag: 'neovim'
-          - dockerfile: 'Dockerfile.tex'
+          - dockerfile: 'tex.Dockerfile'
             tag: 'neovim-tex'
     runs-on: ubuntu-latest
     permissions:
