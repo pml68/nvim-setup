@@ -25,6 +25,7 @@ local servers = {
   "glsl_analyzer",
   "csharp_ls",
   "gopls",
+  "unocss",
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {

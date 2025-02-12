@@ -21,6 +21,7 @@ return {
     "gopls",
     "gofumpt",
     "golines",
+    "unocss-language-server",
   },
   PATH = "skip",
   ui = {
