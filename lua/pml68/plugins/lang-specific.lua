@@ -27,12 +27,18 @@ return {
   },
   {
     "saecki/crates.nvim",
-    tag = "stable",
+    commit = "72644e516866e343b711203a977750e4e9fe38cc",
     dependencies = "hrsh7th/nvim-cmp",
     event = { "BufRead Cargo.toml" },
     config = function()
       local crates = require("crates")
-      crates.setup()
+      crates.setup({
+        completion = {
+          cmp = {
+            enabled = true,
+          },
+        },
+      })
 
       vim.keymap.set("n", "<leader>rcu", function()
         crates.upgrade_all_crates()
