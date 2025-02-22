@@ -27,7 +27,7 @@ return {
   },
   {
     "saecki/crates.nvim",
-    commit = "72644e516866e343b711203a977750e4e9fe38cc",
+    tag = "stable",
     dependencies = "hrsh7th/nvim-cmp",
     event = { "BufRead Cargo.toml" },
     config = function()
