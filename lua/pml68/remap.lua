@@ -93,15 +93,14 @@ end, { noremap = true, silent = true })
 
 -- Diagnostics, LSP
 vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
-vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
-vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+vim.keymap.set('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+vim.keymap.set('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
     local opts = { buffer = event.buf }
 
-    vim.keymap.set('n', '<leader>gh', '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" } })<CR>', opts)
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
