@@ -4,10 +4,6 @@ local capabilities = vim.tbl_deep_extend("force",
 )
 local lspconfig = require("lspconfig")
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
-})
-
 local servers = {
   -- "asm_lsp",
   "html",

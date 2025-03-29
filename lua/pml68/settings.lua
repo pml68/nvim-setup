@@ -5,6 +5,8 @@ vim.o.conceallevel = 2
 
 vim.o.laststatus = 3
 
+vim.o.winborder = "rounded"
+
 local function branch_name()
   local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
   if branch ~= "" then
@@ -13,6 +15,8 @@ local function branch_name()
     return ""
   end
 end
+
+vim.diagnostic.config({ virtual_lines = true })
 
 local function diagnostics()
   local warns = vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.WARN })
