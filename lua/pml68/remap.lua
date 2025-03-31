@@ -6,8 +6,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohl<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>")
 vim.keymap.set("n", "<leader>fb", "=ap")
 vim.keymap.set("n", "<leader><leader>", "<cmd>!chmod 755 %<CR>", { silent = true })
-vim.keymap.set("n", "<A-J>", "ddp")
-vim.keymap.set("n", "<A-K>", "ddkP")
+vim.keymap.set("n", "<A-J>", ":m .+1<CR>==")
+vim.keymap.set("n", "<A-K>", ":m .-2<CR>==")
+vim.keymap.set("i", "<A-J>", ":m .+1<CR>==")
+vim.keymap.set("i", "<A-K>", ":m .-2<CR>==")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>sl", "<cmd>exec \"normal i\".nr2char(getchar()).\"\\e\"<CR>")
@@ -85,6 +87,8 @@ vim.keymap.set('n', '<leader>ft', function()
         cwd = vim.fn.getcwd(),
         search_dirs = todo_files
       })
+    else
+      print("No 'TODO' strings or TODO.{txt,md} files found")
     end
   else
     telescope.grep_string({ search = "TODO" })
@@ -107,7 +111,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     vim.keymap.set({ 'n', 'x' }, '<S-f>', '<cmd>lua vim.lsp.buf.format({async = true})<CR>', opts)
     vim.keymap.set('n', 'gc', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     -- u/Blan_11
