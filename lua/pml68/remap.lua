@@ -88,7 +88,7 @@ vim.keymap.set('n', '<leader>ft', function()
         search_dirs = todo_files
       })
     else
-      print("No 'TODO' strings or TODO.{txt,md} files found")
+      vim.api.nvim_echo({ { "Failed to find any to-dos", "WarningMsg" } }, true, {})
     end
   else
     telescope.grep_string({ search = "TODO" })

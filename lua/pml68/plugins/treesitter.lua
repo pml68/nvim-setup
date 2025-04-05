@@ -30,6 +30,7 @@ return {
         "gitignore",
         "gitattributes",
         "gitcommit",
+        "git_config",
         "go",
         "gosum",
         "gomod",
