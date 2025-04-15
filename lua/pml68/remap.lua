@@ -14,6 +14,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<A-a>", "<C-a>")
 vim.keymap.set("n", "<A-x>", "<C-x>")
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("n", "<leader>sl", "<cmd>exec \"normal i\".nr2char(getchar()).\"\\e\"<CR>")
 vim.keymap.set("n", "<leader>sc", "<cmd>exec \"normal a\".nr2char(getchar()).\"\\e\"<CR>")
 
