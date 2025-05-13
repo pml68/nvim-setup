@@ -29,7 +29,7 @@ return {
     "saecki/crates.nvim",
     tag = "stable",
     dependencies = "hrsh7th/nvim-cmp",
-    event = { "BufRead Cargo.toml" },
+    event = { "BufRead Cargo.toml", "BufWrite Cargo.toml" },
     config = function()
       local crates = require("crates")
       crates.setup({
