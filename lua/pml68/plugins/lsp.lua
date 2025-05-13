@@ -7,8 +7,8 @@ return {
     end
   },
   {
-    "williamboman/mason.nvim",
-    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
+    "mason-org/mason.nvim",
+    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonUpdate", "MasonLog" },
     opts = function()
       return require("pml68.configs.mason")
     end,
