@@ -33,6 +33,12 @@ return {
     config = function()
       local crates = require("crates")
       crates.setup({
+        lsp = {
+          enabled = true,
+          actions = true,
+          completion = true,
+          hover = true,
+        },
         completion = {
           cmp = {
             enabled = true,
