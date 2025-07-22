@@ -6,6 +6,7 @@ return {
     "lua-language-server",
     "clangd",
     "clang-format",
+    "taplo",
     "jq",
     "json-lsp",
     "svelte-language-server",
