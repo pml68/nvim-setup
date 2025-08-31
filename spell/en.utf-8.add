@@ -12,3 +12,8 @@ texlive
 aur
 backend
 GTK3
+jitter
+SVG
+focusable
+backported
+sudo
