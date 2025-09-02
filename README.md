@@ -27,11 +27,11 @@ And then run it
 docker run -it neovim:latest
 ```
 
-The image size is somewhere around 4.5GB due to every language I use being included (C# with .NET, Java 21 and 17 etc.)
+The image size is somewhere around 4.3GB due to every language I use being included (Rust nightly, C# with .NET, Java 21 and 17 etc.)
 
 ### TeX
 
-There is also an image that contains texlive packages I use on top of everything in the base image. The size is ~5.4GB.
+There is also an image that contains texlive packages I use on top of everything in the base image. The size is ~5.2GB.
 
 Pull or build the image
 ```sh
