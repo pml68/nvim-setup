@@ -2,9 +2,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require("pml68.configs.lspconfig")
-    end
   },
   {
     "mason-org/mason.nvim",

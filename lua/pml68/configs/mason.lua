@@ -16,7 +16,7 @@ return {
     "typescript-language-server",
     "pyright",
     "glsl_analyzer",
-    "kotlin-language-server",
+    "kotlin-lsp",
     "jdtls",
     "csharp-language-server",
     "gopls",
