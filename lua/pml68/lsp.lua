@@ -30,9 +30,6 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 })
 
 vim.lsp.config('*', {
-  -- capabilities = vim.tbl_deep_extend("force",
-  --   vim.lsp.protocol.make_client_capabilities(),
-  --   require('cmp_nvim_lsp').default_capabilities()),
   on_attach = function(client, bufnr)
     require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
   end

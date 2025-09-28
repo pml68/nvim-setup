@@ -1,25 +1,39 @@
 return {
-  "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
-  dependencies = {
-    {
-      "windwp/nvim-autopairs",
-      opts = {
-        fast_wrap = {},
-        disable_filetype = { "TelescopePrompt", "vim" },
-      },
-      config = function(_, opts)
-        require("nvim-autopairs").setup(opts)
-
-        local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-        require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
-      end,
-    },
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
+  {
+    "saghen/blink.compat",
+    version = "2.*",
+    opts = {}
   },
-  config = function()
-    require("pml68.configs.cmp")
-  end,
+  {
+    "saghen/blink.cmp",
+    lazy = false,
+    version = "1.*",
+    opts = {
+      keymap = { preset = "default" },
+      appearance = {
+        nerd_font_variant = "normal",
+      },
+      completion = {
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 150,
+        },
+      },
+      sources = {
+        default = { "lsp", "path", "vimtex", "crates", "buffer" },
+        providers = {
+          vimtex = {
+            name = "vimtex",
+            module = "blink.compat.source",
+          },
+          crates = {
+            name = "crates",
+            module = "blink.compat.source",
+          },
+        },
+      },
+      cmdline = { enabled = false },
+      signature = { enabled = true },
+    },
+  },
 }
