@@ -94,6 +94,8 @@ vim.o.cursorline = false
 
 vim.o.hlsearch = true
 vim.o.incsearch = true
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 vim.o.clipboard = "unnamedplus"
 
