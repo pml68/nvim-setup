@@ -38,11 +38,6 @@ return {
           completion = true,
           hover = true,
         },
-        completion = {
-          cmp = {
-            enabled = true,
-          },
-        },
       })
 
       vim.keymap.set("n", "<leader>rcu", function()

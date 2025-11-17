@@ -20,14 +20,10 @@ return {
         },
       },
       sources = {
-        default = { "lsp", "path", "vimtex", "crates", "buffer" },
+        default = { "lsp", "path", "vimtex", "buffer" },
         providers = {
           vimtex = {
             name = "vimtex",
-            module = "blink.compat.source",
-          },
-          crates = {
-            name = "crates",
             module = "blink.compat.source",
           },
         },
