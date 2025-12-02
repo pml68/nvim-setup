@@ -36,6 +36,7 @@ return {
         "gomod",
         "gotmpl",
         "gowork",
+        "hare",
       },
       highlight = {
         enable = true

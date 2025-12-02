@@ -54,4 +54,9 @@ return {
       vim.g.vimtex_view_method = 'mupdf'
     end,
   },
+  -- Hare
+  {
+    "https://git.sr.ht/~torresjrjr/vim-haredoc",
+    ft = "hare",
+  },
 }
