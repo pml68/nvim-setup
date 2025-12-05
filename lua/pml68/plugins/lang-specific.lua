@@ -56,7 +56,7 @@ return {
   },
   -- Hare
   {
-    "https://git.sr.ht/~torresjrjr/vim-haredoc",
+    "https://git.sr.ht/~pml68/vim-haredoc",
     ft = "hare",
   },
 }
