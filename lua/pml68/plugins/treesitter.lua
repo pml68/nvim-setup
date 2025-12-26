@@ -1,46 +1,68 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = { "BufReadPost", "BufNewFile" },
+  lazy = false,
   build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = {
-        "asm",
-        "c",
-        "cpp",
-        "c_sharp",
-        "lua",
-        "kotlin",
-        "java",
-        "bash",
-        "html",
-        "scss",
-        "css",
-        "typescript",
-        "javascript",
-        "svelte",
-        "python",
-        "rust",
-        "markdown",
-        "markdown_inline",
-        "yaml",
-        "json",
-        "glsl",
-        "make",
-        "gitignore",
-        "gitattributes",
-        "gitcommit",
-        "git_config",
-        "go",
-        "gosum",
-        "gomod",
-        "gotmpl",
-        "gowork",
-        "hare",
-      },
-      highlight = {
-        enable = true
-      }
+    local ts = require("nvim-treesitter")
+
+    local ensure_installed = {
+      "asm",
+      "bash",
+      "c",
+      "c_sharp",
+      "cpp",
+      "css",
+      "git_config",
+      "gitattributes",
+      "gitcommit",
+      "gitignore",
+      "glsl",
+      "go",
+      "gomod",
+      "gosum",
+      "gotmpl",
+      "gowork",
+      "hare",
+      "html",
+      "java",
+      "javascript",
+      "json",
+      "kotlin",
+      "lua",
+      "make",
+      "markdown",
+      "markdown_inline",
+      "python",
+      "rust",
+      "scss",
+      "svelte",
+      "typescript",
+      "vim",
+      "vimdoc",
+      "yaml",
+    }
+
+    ts.install(ensure_installed, {
+      max_jobs = 12,
+      summary = false,
+    })
+
+    local ignore = {
+      "checkhealth",
+      "lazy",
+      "mason",
+      "TelescopePrompt",
+    }
+
+    vim.api.nvim_create_autocmd("FileType", {
+      group = vim.api.nvim_create_augroup("EnableTreesitterHighlighting", { clear = true }),
+      callback = function(event)
+        if vim.tbl_contains(ignore, event.match) then
+          return
+        end
+
+        pcall(function() vim.treesitter.start(event.buf) end)
+      end
     })
   end
 }
